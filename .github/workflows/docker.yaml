@@ -9,7 +9,7 @@ env:
   PROJECT_ID: secure-racer-350406
   GAR_LOCATION: asia-northeast1
   IMAGE_NAME: nodejs-server
-  REPOSITORY: secure-racer-350406
+  REPOSITORY: nodejs-project
   REGION: asia-northeast1
 
 jobs:
