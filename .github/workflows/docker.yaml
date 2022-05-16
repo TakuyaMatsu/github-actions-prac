@@ -45,13 +45,13 @@ jobs:
         run: |
           docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
 
-#       - name: Deploy to Cloud Run
-#         id: deploy
-#         uses: google-github-actions/deploy-cloudrun@v0
-#         with:
-#           service: ${{ env.IMAGE_NAME }}
-#           region: ${{ env.REGION }}
-#           image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v0
+        with:
+          service: ${{ env.IMAGE_NAME }}
+          region: ${{ env.REGION }}
+          image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
-#       - name: Show Output
-#         run: echo ${{ steps.deploy.outputs.url }}
+      - name: Show Output
+        run: echo ${{ steps.deploy.outputs.url }}
